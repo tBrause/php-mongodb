@@ -1,10 +1,10 @@
 # MongoDB and PHP
 
-# install MongoDB PHP Driver
+# MongoDB PHP Driver
 https://www.php.net/manual/de/mongodb.installation.php
 
-# video tutorial
+# Video
 https://youtu.be/KJV8iZ_9gYg
 
-# config MongoDB Xampp
+# MongoDB Xampp
 https://www.thegeekstuff.com/2015/10/php-mongodb-for-xampp/
