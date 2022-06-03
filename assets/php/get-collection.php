@@ -48,7 +48,7 @@ function getCollection($connection, $collection, $data)
     # Ausgabe der Fehlermeldungen
     if (count($error_msg) >= 1) {
 
-        echo 'Fehler : ' . count($error_msg) . '<br>';
+        echo '<h3>Fehler : ' . count($error_msg) . '</h3>';
 
         foreach ($error_msg as $value) {
             echo $value . '<br>';
@@ -56,5 +56,6 @@ function getCollection($connection, $collection, $data)
     }
 
     # Ausgabe der Ergebnisse
-    echo '<br>' . $container . '<br>';
+    echo '<h3>Ergebnisse :</h3>';
+    echo '' . $container . '<br>';
 }
