@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "620303da9d024914cad4922a"
+  },
+  "name": "Banane",
+  "price": 1.29,
+  "category": "Obst",
+  "views": 16
+},{
+  "_id": {
+    "$oid": "620303de9d024914cad4922b"
+  },
+  "name": "Banane",
+  "price": 0.99,
+  "category": "Obst",
+  "views": 16
+},{
+  "_id": {
+    "$oid": "620304319d024914cad4922c"
+  },
+  "name": "Apfel rot",
+  "price": 0.6,
+  "category": "Obst",
+  "views": 2
+},{
+  "_id": {
+    "$oid": "620304319d024914cad4922e"
+  },
+  "name": "Kiwi",
+  "price": 1.19,
+  "category": "Obst",
+  "views": 0,
+  "ratings": [
+    {
+      "user": "Paul",
+      "stars": 4
+    },
+    {
+      "user": "Tom",
+      "stars": 5
+    },
+    {
+      "user": "Max",
+      "stars": 3
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "623b8ca9a7065f2d86c81b6b"
+  },
+  "name": "Birne",
+  "price": "0.90",
+  "categorie": "Obst"
+},{
+  "_id": {
+    "$oid": "627bfc74afacc431f565e697"
+  },
+  "name": "Birne",
+  "price": "0.90",
+  "categorie": "Obst"
+}]
