@@ -1,6 +1,6 @@
 <?php
 # init
-require("assets/php/mongodb.check.php");
+require_once("assets/php/mongodb-check.php");
 require("ini/inc.php");
 ?>
 

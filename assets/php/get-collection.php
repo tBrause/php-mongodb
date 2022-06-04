@@ -1,13 +1,6 @@
 <?php
 
-/**
- * 
- * bei Aufruf dieser Datei
- * wird der Vorgang abgebrochen
- * wenn diese NICHT mit require oder include
- * aufgerufen wird
- * 
- */
+# save single request
 if (count(get_included_files()) >= 1) {
     die();
 }
