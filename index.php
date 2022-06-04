@@ -1,7 +1,8 @@
 <?php
 # init
-require_once("assets/php/mongodb-check.php");
+require("assets/php/mongodb-check.php");
 require("ini/inc.php");
+$correct = 'yes';
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +19,7 @@ require("ini/inc.php");
     <main>
         <h1>MongoDB and PHP</h1>
         <?php
-        require("tutorial.products.php");
+        require("view/tutorial.products.php");
         ?>
     </main>
 </body>

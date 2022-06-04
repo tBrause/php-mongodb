@@ -1,6 +1,6 @@
 <?php
 # save single request
-if (count(get_included_files()) >= 1) {
+if (!isset($correct)) {
     die();
 }
 

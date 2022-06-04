@@ -1,6 +1,8 @@
 <?php
-# init
-# include("ini/inc.php");
+# save single request
+if (!isset($correct)) {
+    die();
+}
 
 # Collection und Daten
 $collection = 'tutorial';
