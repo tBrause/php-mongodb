@@ -1,5 +1,4 @@
 <?php
-
 # save single request
 if (!isset($correct)) {
     die();
