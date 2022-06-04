@@ -2,6 +2,18 @@
 
 /**
  * 
+ * bei Aufruf dieser Datei
+ * wird der Vorgang abgebrochen
+ * wenn diese NICHT mit require oder include
+ * aufgerufen wird
+ * 
+ */
+if (count(get_included_files()) >= 1) {
+    die();
+}
+
+/**
+ * 
  * Funktion : getCollection
  * holt die Werte aus der noSQL-Datenbank
  * 
