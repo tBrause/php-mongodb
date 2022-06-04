@@ -1,7 +1,8 @@
 <?php
 
 # getCollection
-function getCollection($connection, $collection, $data)
+################################
+function getCollection($connection, $collection, $name, $name_arrays, $data)
 {
 
     # Container
@@ -9,7 +10,6 @@ function getCollection($connection, $collection, $data)
 
     # Fehler
     $error_msg = [];
-
 
     # ist die PHP-Erweiterung "mongodb" vorhanden
     if (extension_loaded("mongodb")) {
@@ -24,22 +24,42 @@ function getCollection($connection, $collection, $data)
             # Auswahl der Collection und Daten / Dokumente
             $cursor = $manager->executeQuery("" . $collection . '.' . $data . "", $query);
 
-            # Ergebnis
+            # Ergebnis, Daten zu Objekten
             foreach ($cursor as $object) {
                 #var_dump($object);
 
-                $container .= $object->name . '<br>';
-                $container .= $object->price . '<br>';
+                # Objekte nach Vorgabe : $name = ["name", "price", ...
+                foreach ($name as $value) {
+                    if (isset($object->$value)) {
 
-                if (isset($object->category)) {
-                    $container .= $object->category . '<br>';
-                } else {
-                    array_push($error_msg, $object->_id . ' (keine Kategorie)');
+                        # Arrays im Objekt
+                        if (gettype($object->$value) == "array") {
+
+                            # Objekte in Array
+                            foreach ($object->$value as $array) {
+
+                                # Array nach Vorgabe : $name_arrays = ["user", "stars", ...
+                                foreach ($name_arrays as $arrays) {
+
+                                    # Objekt in Container
+                                    $container .= $arrays . ' : ' . $array->$arrays . '<br>';
+                                }
+                            }
+                        } else {
+
+                            # Objekt in Container
+                            $container .= $value . ' : ' . $object->$value . '<br>';
+                        }
+                    } else {
+
+                        # Fehlermeldung in Array
+                        array_push($error_msg, $object->name . ' ' . $object->_id . ' ' . $value . '');
+                    }
                 }
                 $container .= '<br><br>';
             }
-        } catch (MongoConnectionExeption $e) {
-            var_dump($e);
+        } catch (MongoConnectionExeption $error) {
+            var_dump($error);
         }
     } else {
         array_push($error_msg, 'PHP-MongoDB-Erweiterung installieren');
@@ -48,7 +68,7 @@ function getCollection($connection, $collection, $data)
     # Ausgabe der Fehlermeldungen
     if (count($error_msg) >= 1) {
 
-        echo '<h3>Fehler : ' . count($error_msg) . '</h3>';
+        echo '<h3>Fehlende Werte : ' . count($error_msg) . '</h3>';
 
         foreach ($error_msg as $value) {
             echo $value . '<br>';

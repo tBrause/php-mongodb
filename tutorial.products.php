@@ -6,8 +6,11 @@
 $collection = 'tutorial';
 $data = 'products';
 
+$name = ["name", "price", "categorie", "views", "ratings"];
+$name_arrays = ["user", "stars"];
+
 # Funktion getCollection laden
 include("assets/php/get-collection.php");
 
 # Ergebnis
-getCollection($connection, $collection, $data);
+getCollection($connection, $collection, $name, $name_arrays, $data);

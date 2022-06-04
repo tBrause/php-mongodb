@@ -1,5 +1,6 @@
 <?php
 # init
+include("assets/php/mongodb.check.php");
 include("ini/inc.php");
 ?>
 
