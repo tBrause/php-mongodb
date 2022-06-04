@@ -19,7 +19,7 @@ require("ini/inc.php");
     <main>
         <h1>MongoDB and PHP</h1>
         <?php
-        require("view/tutorial.products.php");
+        require("view/tutorial-products.php");
         ?>
     </main>
 </body>
