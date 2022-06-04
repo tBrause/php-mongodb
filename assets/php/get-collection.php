@@ -1,7 +1,13 @@
 <?php
 
-# getCollection
-################################
+/**
+ * 
+ * Funktion : getCollection
+ * holt die Werte aus der Datenbank
+ * 
+ * 
+ */
+
 function getCollection($connection, $collection, $name, $name_arrays, $data)
 {
 
@@ -40,9 +46,12 @@ function getCollection($connection, $collection, $name, $name_arrays, $data)
 
                                 # Array nach Vorgabe : $name_arrays = ["user", "stars", ...
                                 foreach ($name_arrays as $arrays) {
-
-                                    # Objekt in Container
-                                    $container .= $arrays . ' : ' . $array->$arrays . '<br>';
+                                    if (isset($array->$arrays)) {
+                                        # Objekt in Container
+                                        $container .= $arrays . ' : ' . $array->$arrays . '<br>';
+                                    } else {
+                                        array_push($error_msg, $object->name . ' ' . $object->_id . ' ' . $arrays . '');
+                                    }
                                 }
                             }
                         } else {
