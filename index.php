@@ -1,8 +1,8 @@
 <?php
 # init
+$correct = 'yes';
 require("assets/php/mongodb-check.php");
 require("ini/inc.php");
-$correct = 'yes';
 ?>
 
 <!DOCTYPE html>
