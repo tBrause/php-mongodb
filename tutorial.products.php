@@ -13,4 +13,4 @@ $name_arrays = ["user", "stars"];
 include("assets/php/get-collection.php");
 
 # Ergebnis
-getCollection($connection, $collection, $name, $name_arrays, $data);
+getCollection($connection, $collection, $name, $name_arrays, $data, $error_msg);

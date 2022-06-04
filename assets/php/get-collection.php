@@ -3,19 +3,16 @@
 /**
  * 
  * Funktion : getCollection
- * holt die Werte aus der Datenbank
+ * holt die Werte aus der noSQL-Datenbank
  * 
  * 
  */
 
-function getCollection($connection, $collection, $name, $name_arrays, $data)
+function getCollection($connection, $collection, $name, $name_arrays, $data, $error_msg)
 {
 
     # Container
     $container = '';
-
-    # Fehler
-    $error_msg = [];
 
     # ist die PHP-Erweiterung "mongodb" vorhanden
     if (extension_loaded("mongodb")) {
@@ -47,9 +44,12 @@ function getCollection($connection, $collection, $name, $name_arrays, $data)
                                 # Array nach Vorgabe : $name_arrays = ["user", "stars", ...
                                 foreach ($name_arrays as $arrays) {
                                     if (isset($array->$arrays)) {
+
                                         # Objekt in Container
                                         $container .= $arrays . ' : ' . $array->$arrays . '<br>';
                                     } else {
+
+                                        # Fehlermeldung in Array
                                         array_push($error_msg, $object->name . ' ' . $object->_id . ' ' . $arrays . '');
                                     }
                                 }
