@@ -19,7 +19,8 @@ require("ini/inc.php");
     <main>
         <h1>MongoDB and PHP</h1>
         <?php
-        require("view/tutorial-products.php");
+        require("view/get-collection.php");
+        #require("view/set-collection.php");
         ?>
     </main>
 </body>

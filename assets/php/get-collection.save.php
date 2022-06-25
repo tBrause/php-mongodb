@@ -31,28 +31,12 @@ function getCollection($connection_cluster, $collection, $data, $error_msg)
 
             # Ergebnis, Daten zu Objekten
             foreach ($cursor as $object) {
-
-                $array = (array)$object;
-
-                #echo count($array);
-
-                foreach ($array as $key => $value) {
-                    echo $key . " - ";
-                    echo $value . "<br>";
-                }
-
-                /*for ($i = 0; $i < $array; $i++) {
-                    # code...
-                    echo $array[$i];
-                }*/
-                #var_dump($key);
-                #var_dump($object);
+                var_dump($object);
                 #echo $object->count();
                 #var_dump($object->count());
 
-                #$container .= $key . '<br>';
-                #$container .= $object->id . '<br>';
-                #$container .= $object->Name . '<br>';
+                $container .= $object->id . '<br>';
+                $container .= $object->Name . '<br>';
 
                 $container .= '<br><br>';
             }

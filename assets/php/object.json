@@ -1,0 +1,23 @@
+{
+    "_id": {
+        "$oid": "620304319d024914cad4922e"
+    },
+    "name": "Kiwi",
+    "price": 1.19,
+    "category": "Obst",
+    "views": 0,
+    "ratings": [
+        {
+            "user": "Paul",
+            "stars": 4
+        },
+        {
+            "user": "Tom",
+            "stars": 5
+        },
+        {
+            "user": "Max",
+            "stars": 3
+        }
+    ]
+}

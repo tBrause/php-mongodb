@@ -1,0 +1,10 @@
+{
+    "_id": {
+        "$oid": "62b4db27cc796bcc2c6e55dc"
+    },
+    "id": "1",
+    "devicetype": "1",
+    "Name": "Name",
+    "Type": "Typ",
+    "IP": "IP Adresse"
+}

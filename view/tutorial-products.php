@@ -5,8 +5,10 @@ if (!isset($correct)) {
 }
 
 # Collection und Daten
-$collection = 'tutorial';
-$data = 'products';
+#$collection = 'tutorial';
+$collection = 'vissio';
+#$data = 'products';
+$data = 'device';
 
 $name = ["name", "price", "categorie", "views", "ratings"];
 $name_arrays = ["user", "stars"];
@@ -15,4 +17,4 @@ $name_arrays = ["user", "stars"];
 require("assets/php/get-collection.php");
 
 # Ergebnis
-getCollection($connection, $collection, $name, $name_arrays, $data, $error_msg);
+getCollection($connection_cluster, $collection, $name, $name_arrays, $data, $error_msg);
